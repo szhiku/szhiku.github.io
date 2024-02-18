@@ -407,7 +407,7 @@ mobileLayoutEconomy: true
 # 顶部面板在不同模式下的颜色
 # Browser header panel color.
 themeColor:
-  light: "#222"
+  light: "#87CEEB"
   dark: "#222"
 
 # TODO 暂时不支持
@@ -461,7 +461,7 @@ readingProgress:
   color: "#37c6c0"
   # 进度条的高度
   # Hight of the read progress bar.
-  height: 3px
+  height: 5px
 
 # 书签功能
 # Bookmark Support
@@ -471,7 +471,7 @@ bookmark:
   enable: true
   # 自定义书签显示颜色
   # Customize the color of the bookmark.
-  color: "#222"
+  color: "#87CEEB"
   # 支持方式： auto | manual
   # auto: 当关闭页面或点击书签按钮时，会自动保存当前的阅读进度
   # manual: 只有当点击书签按钮时才会保存阅读进度
