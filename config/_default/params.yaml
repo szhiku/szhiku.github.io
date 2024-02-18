@@ -23,15 +23,15 @@ scheme: Gemini
 
 # 开启暗模式
 # Dark Mode
-darkmode: true
+darkmode: false
 
 
 # 站点基本信息
 # Site Information Settings
-author: NexT 主题
-subtitle: 为 Hugo 打造的主题
-description: 保持简单的易用性和强大的功能。
-keywords: Hugo,NexT,主题,简单,强大
+author: szh
+subtitle: szh知识库
+description: 保持简单、易用、强大功能。
+keywords: szh,简单,强大
 
 # 不同尺寸站点图标
 # Different size of favicon
@@ -162,9 +162,9 @@ siteState:
 # Key is the link label order.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 socials: 
-  social0: Github || https://github.com/elkan1788 || fab fa-github
-  #social1: E-Mail || mailto:yourname@gmail.com || fa fa-envelope
-  social2: 知乎 || https://www.zhihu.com/people/lisenhui || fa fa-book
+  social0: Github || https://github.com/szhiku || fab fa-github
+  social1: E-Mail || aaa467843177@qq.com || fa fa-envelope
+  social2: 知乎 || https://www.zhihu.com/people/feng-ying-xia-3 || fa fa-book
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
   #FB Page: https://www.facebook.com/yourname || fab fa-facebook
@@ -267,7 +267,7 @@ footer:
   # Beian ICP and gongan information for Chinese users. 
   # See: https://beian.miit.gov.cn, http://www.beian.gov.cn
   beian:
-    enable: true
+    enable: false
     # ICP 备案的具体信息
     icp: 粤ICP备 18047355-1 号
     # 公安网备的省份简称
@@ -639,7 +639,7 @@ quicklink:
 comments:
   # 开启评论组件
   # If true, will show comment component in post end.
-  enable: true   
+  enable: false   
   # 设置默认使用的评论插件
   # 可选值：livere | waline | utterances | artalk | giscus
   # Choose a comment system to be displayed by default.
