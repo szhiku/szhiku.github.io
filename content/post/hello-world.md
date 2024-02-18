@@ -1,27 +1,3 @@
----
-title: "世界，你好！"
-description: "快速的描述下有关于 Hugo 建站的基本用法。"
-
-lastmod: 2022-06-03T16:43:23+08:00
-date: 2022-06-02T11:52:03+08:00
-
-categories:
- - 博客
-tags:
- - Hugo
- - 开始
-
-url: post/hello-world.html
-toc: true
-weight: 2
----
-
-> “使用 `weight` 关键字置顶文章。”
-
-[Hugo](https://gohugo.io/) 是现今世界上最快的网站建设框架，也是最流行的开源静态站点生成器之一。 凭借其惊人的速度和灵活性，Hugo 让建设网站再次变得有趣起来。
-
-<!--more-->
-
 ## 快速开始
 
 ### 发表新文章
