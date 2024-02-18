@@ -369,8 +369,8 @@ rewardSets:
   # Donate type
   # Usage: `name:image url`
   reward:
-    wechatpay: /data/wechat-pay.jpg
-    alipay: /data/ali-pay.jpg
+    wechatpay: /content/wechat-pay.jpg
+    alipay: /content/ali-pay.jpg
     #paypal: /images/paypal.png
     #bitcoin: /images/bitcoin.png
 
