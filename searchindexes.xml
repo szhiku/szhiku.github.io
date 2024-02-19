@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>思源笔记一键发布至Hexo、Hugo、Jekyll、Vitepress、Vuepress博客（github）并通过github action构建page并同步gitee page</title><url>/post/siyuan-notes-are-published-to-hexo-hugo-jekyll-vitepress-vuepress-blog-github-and-through-github-action-bsbh2.html</url><categories><category>技术</category></categories><tags><tag>思源笔记</tag><tag>运维</tag></tags><content type="html"><![CDATA[  思源笔记一键发布至Hexo、Hugo、Jekyll、Vitepress、Vuepress博客（github）并通过github action构建page并同步gitee page 先决条件：思源笔记、一键发布工具、Hexo\Hugo\Jekyll\Vitepress\Vuepress相关主题
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>执行shell脚本文件有多少种方法？有什么区别？</title><url>/post/how-many-ways-are-there-to-execute-the-shell-script-file-what-s-the-difference-18mzrt.html</url><categories><category>技术</category></categories><tags><tag>Linux</tag><tag>运维</tag></tags><content type="html"> 执行shell脚本文件有多少种方法？有什么区别？ 执行.sh​文件有几种方法，主要包括：
+直接运行：
+./your_script.sh 这种方式需要在脚本文件的目录下执行，并确保脚本文件有执行权限 (chmod +x your_script.sh​)。这种方式的路径解析是相对于当前工作目录的。
+通过bash解释器运行：
+bash your_script.sh 或者
+sh your_script.sh 这种方式不需要执行权限，会使用指定的解释器来运行脚本。如果你使用bash​或sh​关键字，可以确保脚本在不同的环境中都能运行。
+通过source命令运行：
+source your_script.sh 或者简写为：
+. your_script.sh 这种方式会在当前shell环境中执行脚本，而不是启动一个新的进程。这意味着脚本中的变量和函数等将在当前shell中生效。
+这几种方法的主要区别在于执行环境和作用域。直接运行和通过bash解释器运行都会创建一个新的进程，而source命令则在当前shell中执行，因此会影响当前环境。选择执行方式取决于你的需求，如果脚本需要修改当前shell的环境变量或执行其他会影响当前环境的操作，建议使用source命令。</content></entry><entry><title>思源笔记一键发布至Hexo、Hugo、Jekyll、Vitepress、Vuepress博客（github）并通过github action构建page并同步gitee page</title><url>/post/siyuan-notes-are-published-to-hexo-hugo-jekyll-vitepress-vuepress-blog-github-and-through-github-action-bsbh2.html</url><categories><category>技术</category></categories><tags><tag>思源笔记</tag><tag>运维</tag></tags><content type="html"><![CDATA[  思源笔记一键发布至Hexo、Hugo、Jekyll、Vitepress、Vuepress博客（github）并通过github action构建page并同步gitee page 先决条件：思源笔记、一键发布工具、Hexo\Hugo\Jekyll\Vitepress\Vuepress相关主题
 以Hugo的 hugo-theme-next 主题示例，其他的同理，构建文件不同
 注意事项：Hugo使用无序和有序列表尽量不要超过3层
 部署和配置时长：1小时+
