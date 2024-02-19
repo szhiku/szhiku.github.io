@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>关于 Hugo NexT 组织</title><url>/about.html</url><categories/><tags/><content type="html"> Hugo NexT 组织是由众多喜爱 NexT 主题及风格的世界各地友人共同组建而成，为的就是让这个主题继续在 Hugo 引擎中也能得到发扬光大，在此也欢迎你的加入！
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>思源笔记一键发布至Hexo、Hugo、Jekyll、Vitepress、Vuepress博客（github）并通过github action构建page并同步gitee page</title><url>/post/siyuan-notes-are-published-to-hexo-hugo-jekyll-vitepress-vuepress-blog-github-and-through-github-action-bsbh2.html</url><categories><category>技术</category></categories><tags><tag>思源笔记</tag><tag>运维</tag></tags><content type="html"><![CDATA[  思源笔记一键发布至Hexo、Hugo、Jekyll、Vitepress、Vuepress博客（github）并通过github action构建page并同步gitee page 先决条件：思源笔记、一键发布工具、Hexo\Hugo\Jekyll\Vitepress\Vuepress相关主题
+以Hugo的 hugo-theme-next 主题示例，其他的同理，构建文件不同
+注意事项：Hugo使用无序和有序列表尽量不要超过3层
+部署和配置时长：1小时+
+部署流程：克隆Hugo主题至自己仓库-&amp;gt;创建主页仓库-&amp;gt;获取github个人访问令牌token-&amp;gt;github action构建并输出至主页主页-&amp;gt;gitee导入github仓库并配置镜像仓库-&amp;gt;开通gitee page-&amp;gt;配置 hugo-theme-next 使用流程：思源笔记一键发布插件配置-&amp;gt;使用一键发布插件发布文章并选择hugo
+部署详情：
+克隆Hugo主题至自己仓库
+⏬ 克隆主题 点击右上角的 Use this template​​ 绿色按钮然后填写代码仓库的相关信息，参考如下：
+​ https://camo.githubusercontent.com/0031520ad9bb551333a37cf756fbfb3f538e6f33638cd3318e5d70f94aae28e8/68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67 最后点击 Create repository from template​​ 绿色按钮，会直接在你的空间中生成站点代码，再使用git clone​​命令把它克隆到本地进行创作。
+记得首次完全克隆后，需要在根目录中使用如下的 Git​​ 子模块更新命令拉取 hugo-theme-next​​ 主题的最新版本。
+创建主页仓库
+自定义首页，首先需要创建一个与你 Github ID 同名的仓库
+​​
+创建完成后就可以开始为你的首页添加一些有趣的内容了，代码格式可以是 markdown​ 语法，也可以是 HTML​ 语法，但 HTML 的扩展性更强一点，因此笔者使 …  ]]></content></entry><entry><title>关于 Hugo NexT 组织</title><url>/about.html</url><categories/><tags/><content type="html"> Hugo NexT 组织是由众多喜爱 NexT 主题及风格的世界各地友人共同组建而成，为的就是让这个主题继续在 Hugo 引擎中也能得到发扬光大，在此也欢迎你的加入！
 我们的愿景 延续 NexT 经典的黑白调搭配，保持简单的易用性及强大的功能。
 使用反馈 加入 GitHub Discussions 或 Gitter 在线讨论 &amp;#x1f37b; GitHub Issues 提交错误报告 &amp;#x1f41b; GitHub Feature 表新功能的想法 &amp;#x2728; 同时国内用户也可加入 QQ 群交流： 604710815</content></entry><entry><title>文章目录导航</title><url>/post/table-of-content.html</url><categories><category>示例</category></categories><tags><tag>目录</tag><tag>导航</tag><tag>博客</tag></tags><content type="html"> 巴顿将军说过：“衡量一个人是否成功，不是看他站到顶峰，而是从顶峰跌落之后的反弹力”，褚时健的人生便是如此，中年发家致富，名利双收，之后又跌落到谷底，等到74岁再创业，10年后带着褚橙归来，东山再起收获亿万财富，他的发展轨迹就是反弹的过程。
 早年的故事 起始 2014年的春天，在云南省华宁县和宜良县的交界处，一座名叫矣则的小山村里，一处已经有上百年历史的古旧四合院宅子被拆掉。村委会正带领村民们进行“美丽乡村”的建设，一年以后，旧有村居将再也看不到，代之而起的是钢筋混凝土的新式民居。就像10年、20年前中国大小城市的改造一样，这个群山围绕的小村子也开始陷入“工地模式”。
