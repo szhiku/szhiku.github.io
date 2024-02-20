@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>seafile升级最新版注意事项</title><url>/post/seafile-upgrade-the-latest-version-of-precautions-u4rxq.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Linux</tag><tag>seafile</tag></tags><content type="html"><![CDATA[  seafile升级最新版注意事项 笔者以当前最新版11.05为例，以下内容为亲测
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>seafile升级最新版注意事项（11.05版本为例）</title><url>/post/seafile-upgrade-the-latest-version-of-precautions-u4rxq.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Linux</tag><tag>seafile</tag></tags><content type="html"><![CDATA[  seafile升级最新版注意事项（11.05版本为例） 笔者以当前最新版11.05为例，以下内容为亲测
 ‍
 1、docker-compose.yml文件不能使用seafileltd/seafile-mc:latest，得用seafileltd/seafile-mc:11.05，具体原因不明，seafileltd/seafile-mc:latest现在是8.07的版本
 2、升级后会发现无法进入管理页面，此时需要添加到 相应的 Django 设置 中conf/seahub_settings.py​：

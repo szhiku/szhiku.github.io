@@ -1,9 +1,9 @@
 ---
-title: seafile升级最新版注意事项
+title: seafile升级最新版注意事项（11.05版本为例）
 slug: seafile-upgrade-the-latest-version-of-precautions-u4rxq
 url: /post/seafile-upgrade-the-latest-version-of-precautions-u4rxq.html
 date: '2024-02-20 22:08:33'
-lastmod: '2024-02-20 22:20:01'
+lastmod: '2024-02-20 22:22:20'
 toc: true
 tags:
   - 运维
@@ -15,7 +15,7 @@ keywords: 运维,Linux,seafile
 isCJKLanguage: true
 ---
 
-# seafile升级最新版注意事项
+# seafile升级最新版注意事项（11.05版本为例）
 
 　　笔者以当前最新版11.05为例，以下内容为亲测
 
