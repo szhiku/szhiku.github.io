@@ -34,7 +34,19 @@ source your_script.sh 或者简写为：
 创建主页仓库
 自定义首页，首先需要创建一个与你 Github ID 同名的仓库
 ​​
-创建完成后就可以开始为你的首页添加一些有趣的内容了，代码格式可以是 markdown​ 语法，也可以是 HTML​ 语法，但 HTML 的扩展性更强一点，因此笔者使 …  ]]></content></entry><entry><title>关于 Hugo NexT 组织</title><url>/about.html</url><categories/><tags/><content type="html"> Hugo NexT 组织是由众多喜爱 NexT 主题及风格的世界各地友人共同组建而成，为的就是让这个主题继续在 Hugo 引擎中也能得到发扬光大，在此也欢迎你的加入！
+创建完成后就可以开始为你的首页添加一些有趣的内容了，代码格式可以是 markdown​ 语法，也可以是 HTML​ 语法，但 HTML 的扩展性更强一点，因此笔者使 …  ]]></content></entry><entry><title>Zabbix学习路线及重难点摘录</title><url>/post/zabbix-learning-route-and-heavy-difficulties-excerpt-zovbcn.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Linux</tag><tag>zabbix</tag></tags><content type="html"> Zabbix学习路线及重难点摘录 zabbix相关书籍
+Zabbix企业级分布式监控系统 (吴兆松) (Z-Library) 深入理解Zabbix监控系统 (鲍光亚) (Z-Library) roadmap
+本文根据参考书籍目录得出roadmap并摘录要点为新手作指引，未完善的内容可自行百度学习
+参考书籍：Zabbix企业级分布式监控系统
+第1章 开篇——监控系统简介
+1.1 监控系统的功能概述（什么是监控系统？） 监控系统，一是监测，二是控制，监测以达到控制的效果，在计算机领域，可以将其分为5种监控类型。
+应用性能监控（Application Performance Monitoring）。 业务交易监控（Business Transaction Monitoring）。 网络性能监控（Network Monitoring）。 操作系统监控（System Monitoring）。 网络站点监控（Website Monitoring）。 大规模的监控环境，被监控节点多且监控类型多产生的数据和网络连接开销非常大，数据采集方式除了使用主动采集模式，还需要使用代理架构分摊服务器端的性能开销。
+​​
+通常监控系统会选用以下 几种数据存储方式。
+（1）本地存储。使用本地磁盘，基于文件的方式存储。
+（2）使用时序数据库进行数据存储，如古老的环状数据库 （Round Robin Database, RRD）等。近年来，随着时序数据技术的不断发展，出现了比较成熟的时序数据库，如OpenTSDB（底层存储基于 HBase）、Graphite、InfluxDB、Prometheus等，与直接使用文件的存储方式相比，这些时序数据库更加高效。
+（ 3 ） 使 用 数 据 库 管 理 系 统 （ Database Management System, DBMS）进行数据存储，如常见的MySQL、Oracle、SQL Server等。使用 这种数据库来存储监控数据，当数据量达到一定规模时，其读/写效率 均会显著下降，数据库的压力比较大，通常优化方案思路有3种，一是 减少数据的存储量；二是优化数据库本身，调整配置参数，优化运行 环境；三是使用分布式数据库和数据库集群技术方案。
+（4）使用NoSQL数据库进行数据存储。NoSQL相对于DBMS这种传统 的数据库有着一些天然的优势，单机的QPS通常较 …</content></entry><entry><title>关于 Hugo NexT 组织</title><url>/about.html</url><categories/><tags/><content type="html"> Hugo NexT 组织是由众多喜爱 NexT 主题及风格的世界各地友人共同组建而成，为的就是让这个主题继续在 Hugo 引擎中也能得到发扬光大，在此也欢迎你的加入！
 我们的愿景 延续 NexT 经典的黑白调搭配，保持简单的易用性及强大的功能。
 使用反馈 加入 GitHub Discussions 或 Gitter 在线讨论 &amp;#x1f37b; GitHub Issues 提交错误报告 &amp;#x1f41b; GitHub Feature 表新功能的想法 &amp;#x2728; 同时国内用户也可加入 QQ 群交流： 604710815</content></entry><entry><title>文章目录导航</title><url>/post/table-of-content.html</url><categories><category>示例</category></categories><tags><tag>目录</tag><tag>导航</tag><tag>博客</tag></tags><content type="html"> 巴顿将军说过：“衡量一个人是否成功，不是看他站到顶峰，而是从顶峰跌落之后的反弹力”，褚时健的人生便是如此，中年发家致富，名利双收，之后又跌落到谷底，等到74岁再创业，10年后带着褚橙归来，东山再起收获亿万财富，他的发展轨迹就是反弹的过程。
 早年的故事 起始 2014年的春天，在云南省华宁县和宜良县的交界处，一座名叫矣则的小山村里，一处已经有上百年历史的古旧四合院宅子被拆掉。村委会正带领村民们进行“美丽乡村”的建设，一年以后，旧有村居将再也看不到，代之而起的是钢筋混凝土的新式民居。就像10年、20年前中国大小城市的改造一样，这个群山围绕的小村子也开始陷入“工地模式”。
