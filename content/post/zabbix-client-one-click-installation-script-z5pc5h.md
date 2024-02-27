@@ -15,7 +15,7 @@ keywords: 运维,Linux,zabbix
 isCJKLanguage: true
 ---
 
-# zabbix客户端一键安装脚本
+# zabbix客户端（agent）一键安装初始配置脚本
 
 　　本环境：centos7.9
 
@@ -32,14 +32,14 @@ rpm -ivh https://mirrors.tuna.tsinghua.edu.cn/zabbix/zabbix/4.0/rhel/7/x86_64/za
 sed -i 's#repo.zabbix.com#mirrors.tuna.tsinghua.edu.cn/zabbix#g' /etc/yum.repos.d/zabbix.repo
 yum install -y zabbix-agent zabbix-get.x86_64 net-tools
 
-# 配置zabbix-agent
+# 配置zabbix-agent，Server和ServerActive保持一致，Hostname根据情况修改
 cat << 'EOF' > /etc/zabbix/zabbix_agentd.conf
 PidFile=/var/run/zabbix/zabbix_agentd.pid
 LogFile=/var/log/zabbix/zabbix_agentd.log
 LogFileSize=0
 Server=192.168.2.111
-ServerActive=127.0.0.1
-Hostname=Zabbix server
+ServerActive=192.168.2.111
+Hostname=Zabbix agent
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
 EOF
 
