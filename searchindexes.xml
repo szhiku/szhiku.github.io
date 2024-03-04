@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Tomcat 的目录结构</title><url>/post/tomcat-s-directory-structure-zdhbtf.html</url><categories/><tags><tag>运维</tag><tag>Linux</tag><tag>Tomcat</tag></tags><content type="html"> Tomcat 的目录结构 Tomcat9.x 的目录结构参见 表 3-3, 表中的目录都是＜CATALINA_HOME＞ 的子目录。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>tomcat管理</title><url>/post/tomcat-management-ztwwto.html</url><categories/><tags/><content type="html"><![CDATA[  tomcat管理 测试功能,生产环境不要用
+Tomcat管理功能用于对Tomcat自身以及部署在Tomcat的应用管理的web应用,在默认的情况下处于禁止状态的.如果需要开启这个功能,就要配置管理用户,即配置前面说过的tomcat-user.xml
+下面是命令集合:
+修改tomcat-users.xml
+[root@sweb01 ~]# cat /opt/tomcat/conf/tomcat-users.xml &lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt; &lt;!-- 这是个优雅的注释 --&gt; &lt;tomcat-users xmlns=&#34;http://tomcat.apache.org/xml&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xsi:schemaLocation=&#34;http://tomcat.apache.org/xml tomcat-users.xsd&#34; version=&#34;1.0&#34;&gt; &lt;role rolename=&#34;admin-gui&#34;/&gt; &lt;role rolename=&#34;host-gui&#34;/&gt; &lt;role rolename=&#34;manager-gui&#34;/&gt; &lt;user username=&#34;tomcat&#34; password=&#34;tomcat&#34; roles=&#34;admin-gui,host-gui,manager-gui&#34;/&gt; &lt;/tomcat-users&gt; 修改context.xml文件
+[root@sweb01 ~]# grep &#34;10&#34; /opt/tomcat/webapps/manager/META-INF/context.xml allow=&#34;10\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1&#34; /&gt; 重新启动tomcat
+[root@sweb01 ~]# /opt/tomcat/bin/shutdown.sh Using CATALINA_BASE: /opt/tomcat Using CATALINA_HOME: /opt/tomcat Using CATALINA_TMPDIR: /opt/tomcat/temp Using JRE_HOME: /usr Using CLASSPATH: /opt/tomcat/bin/bootstrap.jar:/opt/tomcat/bin/tomcat-juli.jar [root@sweb01 ~]# /opt/tomcat/bin/startup.sh Using CATALINA_BASE: /opt/tomcat Using CATALINA_HOME: /opt/tomcat Using CATALINA_TMPDIR: /opt/tomcat/temp Using JRE_HOME: /usr Using CLASSPATH: /opt/tomcat/bin/bootstrap.jar:/opt/tomcat/bin/tomcat-juli.jar Tomcat started. ​​
+作者：被运维耽误的厨子
+链接：https://www.jianshu.com/p/2789af11299f
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+  ]]></content></entry><entry><title>Tomcat 的目录结构</title><url>/post/tomcat-s-directory-structure-zdhbtf.html</url><categories/><tags><tag>运维</tag><tag>Linux</tag><tag>Tomcat</tag></tags><content type="html"> Tomcat 的目录结构 Tomcat9.x 的目录结构参见 表 3-3, 表中的目录都是＜CATALINA_HOME＞ 的子目录。
 ​​
 在Linux系统中如下
 [root@sweb01 ~]# cd /opt/tomcat/ [root@sweb01 /opt/tomcat]# tree -L 1 ├── bin #用以启动,关闭Tomcat或其他脚本功能的脚本(.bat和.sh) ├── conf #用以配置Tomcat的XML及DTD文件 ├── lib #存放web应用能访问的JAR包 ├── logs #Catalina和其他web应用程序的日志文件 ├── temp #临时文件 ├── webapps #Web应用程序根目录 └── work #用以产生有JSP编译出的Servlet的.java和.class文件 webapps目录
