@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>监控TCP11种状态集命令、脚本（centos7）</title><url>/post/surveillance-tcp-11-status-set-commands-and-scripts-centos7-zbpvsa.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Linux</tag><tag>TCP/IP</tag></tags><content type="html"><![CDATA[  监控TCP11种状态集命令、脚本（centos7） 先决条件：
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Tomcat一键部署脚本</title><url>/post/tomcat-one-click-deployment-script-1zvvpr.html</url><categories/><tags/><content type="html"><![CDATA[  Tomcat一键部署脚本 环境：centos7、已安装wget、已换阿里源
+简易脚本，抛砖引玉
+Tomcat一键部署脚本 #!/bin/bash # 安装Java yum install java-1.8.0 -y # 检查Java是否安装成功 java -version if [ $? -ne 0 ]; then echo &#34;Java安装失败，请检查后重试。&#34; exit 1 fi # 创建软件目录 mkdir -p /data/soft # 切换到软件目录 cd /data/soft # 下载Tomcat安装包 wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.99/bin/apache-tomcat-8.5.99.tar.gz # 解压Tomcat安装包到/opt目录 tar zxf apache-tomcat-8.5.99.tar.gz -C /opt/ # 创建软链接 ln -s /opt/apache-tomcat-8.5.99 /opt/tomcat # 配置环境变量 echo &#39;export TOMCAT_HOME=/opt/tomcat&#39; &gt;&gt; /etc/profile source /etc/profile # 启动Tomcat /opt/tomcat/bin/startup.sh # 检查Tomcat是否启动成功 if [ $? -eq 0 ]; then echo &#34;Tomcat安装并启动成功。&#34; else echo &#34;Tomcat启动失败，请检查日志。&#34; exit 1 fi # 检查Tomcat服务是否正在运行 ps -ef | grep tomcat # 显示Tomcat日志 tail -f /opt/tomcat/logs/catalina.out # 脚本结束   ]]></content></entry><entry><title>监控TCP11种状态集命令、脚本（centos7）</title><url>/post/surveillance-tcp-11-status-set-commands-and-scripts-centos7-zbpvsa.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Linux</tag><tag>TCP/IP</tag></tags><content type="html"><![CDATA[  监控TCP11种状态集命令、脚本（centos7） 先决条件：
 用户有足够的权限来执行 netstat​ 命令。
 不是root用户可能需要在命令前加上 sudo​。
 安装了 netstat​。
@@ -34,7 +36,32 @@ source your_script.sh 或者简写为：
 创建主页仓库
 自定义首页，首先需要创建一个与你 Github ID 同名的仓库
 ​​
-创建完成后就可以开始为你的首页添加一些有趣的内容了，代码格式可以是 markdown​ 语法，也可以是 HTML​ 语法，但 HTML 的扩展性更强一点，因此笔者使 …  ]]></content></entry><entry><title>Zabbix学习路线及重难点摘录</title><url>/post/zabbix-learning-route-and-heavy-difficulties-excerpt-zovbcn.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Linux</tag><tag>zabbix</tag></tags><content type="html"> Zabbix学习路线及重难点摘录 zabbix相关书籍
+创建完成后就可以开始为你的首页添加一些有趣的内容了，代码格式可以是 markdown​ 语法，也可以是 HTML​ 语法，但 HTML 的扩展性更强一点，因此笔者使 …  ]]></content></entry><entry><title>Tomcat学习路线roadmap和个人入门知识摘录</title><url>/post/tomcat-learning-route-roadmap-and-personal-entry-knowledge-excerpt-1xckaw.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Tomcat</tag></tags><content type="html"> Tomcat学习路线roadmap和个人入门知识摘录 roadmap 参考《TOMCAT与JAVA WEB开发技术详解 第3版》，内容非常非常详细，初期入门并不需要学习到那么详细，后面精进学习可按图索骥，或者有需要再看看就行 第 1 章 Web 运作原理探析
+读者不妨带着以下问题去阅读本章开头的内容：
+●在整个 Web体系中，浏览器和Web服务器各自的功能是什么?
+●浏览器和Web服务器采用HTTP协议进行通信，该协议规定了通信的哪些具体细节?
+本章接着介绍了Web的发展历程。
+●第一个阶段: 发布静态HTML文档。
+●第二个阶段:发布静态多媒体信息。
+●第三个阶段:提供浏览器端与用户的动态交互功能。
+●第四个阶段:提供服务器端与用户的动态交互功能。
+●第五个阶段:发布基于Web的应用程序，即Web应用。
+●第六个阶段:发布Web服务。
+●第七个阶段:先后推出Web 2.0以及Web 3.0。Web 2.0是全民共建的Web,用户
+共同为Web提供丰富的内容。在Web 3.0中，网络为用户提供更智能、更个性化
+的服务。
+1.1 Web 的概念
+Web 的概念如下：Web 是一种分布式应用架构，旨在共享分布在网络上的各个 Web 服 务器中所有互相连接的信息。采用客户/服务器（B/S结构（Browser/Server））通信模式，客户与服务器之间用 HTTP 协议通信。Web 使用超级文本技术（HTML） 来连接网络上的信息。信息存放在服务器端， 客户机通过浏览器（例如 IE 或 Chrome）就可以查找网络中各个 Web服务器上的信息。
+​​ 概念 WWW（World Wide Web）是指全球范围内的 Web 1.2 HTML 简介
+HTML ( Hyper Text Markup Language) 是指超文本标记语言。 1.3 URL 简介
+1.4 HTTP 简介
+1.4.1 HTTP 请求格式
+HTTP 规定，HTTP 请求由如下 3 部分构成：
+• 请求方法、URI 和 HTTP 的版本。
+• 请求头 ( RequestHeader)。
+• 请求正文 (RequestContent)。
+​​
+POST /hello.jsp HTTP/1.1 // HTTP 请求的第一行包括请求方式、URI 和协议版本这 3 项内容，以空格分开 // “POST”为请求方 …</content></entry><entry><title>Zabbix学习路线及重难点摘录</title><url>/post/zabbix-learning-route-and-heavy-difficulties-excerpt-zovbcn.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Linux</tag><tag>zabbix</tag></tags><content type="html"> Zabbix学习路线及重难点摘录 zabbix相关书籍
 Zabbix企业级分布式监控系统 (吴兆松) (Z-Library) 深入理解Zabbix监控系统 (鲍光亚) (Z-Library) roadmap
 本文根据参考书籍目录得出roadmap并摘录要点为新手作指引，未完善的内容可自行百度学习
 参考书籍：Zabbix企业级分布式监控系统
