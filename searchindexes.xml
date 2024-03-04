@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Tomcat安全配置、管理规范整理</title><url>/post/tomcat-security-configuration-management-specifications-1u324h.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Linux</tag><tag>Tomcat</tag></tags><content type="html"> Tomcat安全配置、管理规范整理 参考：
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Tomcat各端口详解</title><url>/post/tomcat-detailed-explanation-z1jrrbj.html</url><categories/><tags><tag>运维</tag><tag>Linux</tag><tag>Tomcat</tag></tags><content type="html"><![CDATA[  Tomcat各端口详解 从tomcat配置文件中，我们可以看出，在启动tomcat的时候默认启动了3个端口，分别是8080（8443）、8009、8005。
+8080（8443）端口 &amp;lt;Connector port=&amp;#34;80&amp;#34; protocol=&amp;#34;HTTP/1.1&amp;#34; connectionTimeout=&amp;#34;20000&amp;#34; redirectPort=&amp;#34;8443&amp;#34; /&amp;gt; 这个应该是我们最熟悉的一个，平常开发测试也经常用，该Connector用于监听浏览器发送的请求，设置为80后可以直接使用 http://localhost 访问。
+http协议，其中redirectPort​表示如果发送的是https请求，就将请求发送到8443端口。
+8443是默认的https监听端口，默认是没有开启的，如果要开启由于tomcat不自带证书所以除了取消注释之外，还需要自己生成证书并指定。
+8009端口 &amp;lt;Connector port=&amp;#34;8009&amp;#34; protocol=&amp;#34;AJP/1.3&amp;#34; redirectPort=&amp;#34;8443&amp;#34; /&amp;gt; Nginx、Apache等反向代理tomcat时就可以使用ajp协议反向代理到该端口。
+虽然我们经常使用http反向代理到8080端口，但由于ajp建立tcp链接后一般长时间保持，从而减少Http反复进行tcp链接和断开的开销，所以反向代理中ajp是比http高效的。
+8005端口 &amp;lt;Server port=&amp;#34;8005&amp;#34; shutdown=&amp;#34;SHUTDOWN&amp;#34;&amp;gt; tomcat监听的关闭端口，就是说这个端口负责监听关闭tomcat的请求。
+当执行shutdown.sh​关闭tomcat就是链接8005端口执行SHUTDOWN​命令；由此，我们直接用telnet向8005端口执行SHUTDOWN​来关闭tomcat，这也是比较正统的关闭方式，如果这个端口没被监听，那么sh脚本就是无效的。
+实际上，8005和8009端口并不是必须的，尤其SHUTDOWN虽然默认是监听在127.0.0.1，但是连接到这个端口，发送SHUTDOWN​就可以无任何验证的把tomcat关闭掉，有安全隐患的。
+AJP端口 …  ]]></content></entry><entry><title>Tomcat安全配置、管理规范整理</title><url>/post/tomcat-security-configuration-management-specifications-1u324h.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Linux</tag><tag>Tomcat</tag></tags><content type="html"> Tomcat安全配置、管理规范整理 参考：
 Tomcat安全管理规范：https://blog.csdn.net/wuxingge/article/details/116517777
 tomcat 安全规范(tomcat安全加固和规范)：https://www.jb51.net/article/173899.htm
 omcat安全配置规范 以及个人从业经验
