@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Tomcat各端口详解</title><url>/post/tomcat-detailed-explanation-z1jrrbj.html</url><categories/><tags><tag>运维</tag><tag>Linux</tag><tag>Tomcat</tag></tags><content type="html"><![CDATA[  Tomcat各端口详解 从tomcat配置文件中，我们可以看出，在启动tomcat的时候默认启动了3个端口，分别是8080（8443）、8009、8005。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Jenkins入门</title><url>/post/jenkins-entry-z2edmed.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Linux</tag><tag>Jenkins</tag></tags><content type="html"> Jenkins入门 第0章 Jenkins介绍 1.jenkins是一个开源的持续集成工具，由java语言开发 2.jenkins是一个调度平台，拥有众多的插件，绝大部分功能都是由插件来完成的 第1章 Jenkins安装 1.官方网站 https://www.jenkins.io/zh/ https://www.jenkins.io/zh/doc/ 2.安装部署 清华源直接下载rpm包安装即可,下载地址如下：
+https://mirrors.tuna.tsinghua.edu.cn/jenkins/redhat/ 安装命令如下：
+rpm -ivh jdk-8u181-linux-x64.rpm rpm -ivh jenkins-2.176.1-1.1.noarch.rpm 3.目录文件说明 [root@jenkins ~]# rpm -ql jenkins /etc/init.d/jenkins #启动文件 /etc/logrotate.d/jenkins #日志切割脚本 /etc/sysconfig/jenkins #配置文件 /usr/lib/jenkins #安装目录 /usr/lib/jenkins/jenkins.war #安装包 /usr/sbin/rcjenkins /var/cache/jenkins /var/lib/jenkins #数据目录 /var/log/jenkins #日志目录 4.配置使用root账户运行 vim /etc/sysconfig/jenkins JENKINS_USER=&amp;amp;#34;root&amp;amp;#34; 5.启动jenkins systemctl start jenkins 6.解锁Jenkins ​​
+7.修改admin密码 ​​
+8.使用清华源作为插件地址 清华源地址：
+https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json 配置步骤：
+​​
+​​
+​​
+​​
+9.使用离线安装插件 我们可以将插件提前下好，然后只需要解压到jenkins对应的目录即可
+tar zxf jenkins_plugins.tar.gz -C /var/lib/jenkins/ ll /var/lib/jenkins/plugins/ 重启jenkins： …</content></entry><entry><title>Tomcat各端口详解</title><url>/post/tomcat-detailed-explanation-z1jrrbj.html</url><categories/><tags><tag>运维</tag><tag>Linux</tag><tag>Tomcat</tag></tags><content type="html"><![CDATA[  Tomcat各端口详解 从tomcat配置文件中，我们可以看出，在启动tomcat的时候默认启动了3个端口，分别是8080（8443）、8009、8005。
 8080（8443）端口 &amp;lt;Connector port=&amp;#34;80&amp;#34; protocol=&amp;#34;HTTP/1.1&amp;#34; connectionTimeout=&amp;#34;20000&amp;#34; redirectPort=&amp;#34;8443&amp;#34; /&amp;gt; 这个应该是我们最熟悉的一个，平常开发测试也经常用，该Connector用于监听浏览器发送的请求，设置为80后可以直接使用 http://localhost 访问。
 http协议，其中redirectPort​表示如果发送的是https请求，就将请求发送到8443端口。
 8443是默认的https监听端口，默认是没有开启的，如果要开启由于tomcat不自带证书所以除了取消注释之外，还需要自己生成证书并指定。
