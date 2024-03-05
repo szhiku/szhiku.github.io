@@ -9,7 +9,11 @@ https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json 配置�
 ​​
 ​​
 9.使用离线安装插件 我们可以将插件提前下好，然后只需要解压到jenkins对应的目录即可
-tar zxf jenkins_plugins.tar.gz -C /var/lib/jenkins/ ll /var/lib/jenkins/plugins/ 重启jenkins： …</content></entry><entry><title>Tomcat各端口详解</title><url>/post/tomcat-detailed-explanation-z1jrrbj.html</url><categories/><tags><tag>运维</tag><tag>Linux</tag><tag>Tomcat</tag></tags><content type="html"><![CDATA[  Tomcat各端口详解 从tomcat配置文件中，我们可以看出，在启动tomcat的时候默认启动了3个端口，分别是8080（8443）、8009、8005。
+tar zxf jenkins_plugins.tar.gz -C /var/lib/jenkins/ ll /var/lib/jenkins/plugins/ 重启jenkins： …</content></entry><entry><title>Redis快速入门</title><url>/post/redis-fast-entry-2ltiy1.html</url><categories/><tags><tag>运维</tag><tag>Linux</tag><tag>Redis</tag></tags><content type="html"> Redis快速入门 第1章 Redis介绍 1.1 Redis是什么 Redis是一种基于键值对的NoSQL数据库,与很多键值对数据库不同,redis中的值可以有string,hash,list,set,zset,geo等多种数据结构和算法组成.
+因为Redis会将所有的数据都放在内存中,所以他的读写性能非常惊人.
+不仅如此,Redis还可以将内存中的数据利用快照和日志的形式保存到硬盘上
+Redis还提供了键过期,发布订阅,事务,流水线等附加功能.
+1.2 Redis重要特性 1.速度快 Redis所有的数据都存放在内存中 Redis使用C语言实现 Redis使用单线程架构 2.基于键值对的数据结构服务器 5中数据结构:字符串,哈希,列表,集合,有序集合 3.丰富的功能 提供了键过期功能,可以实现缓存 提供了发布订阅功能,可以实现消息系统 提供了pipeline功能,客户端可以将一批命令一次性传到Redis,减少了网络开销 4.简单稳定 源码很少,3.0版本以后5万行左右. 使用单线程模型法,是的Redis服务端处理模型变得简单. 不依赖操作系统的中的类库 5.客户端语言多 java,PHP,python,C,C++,Nodejs等 6.持久化 RDB和AOF 7.主从复制 8.高可用和分布式 哨兵 集群 1.3 Redis应用场景 1.缓存-键过期时间 缓存session会话 缓存用户信息,找不到再去mysql查,查到然后回写到redis 2.排行榜-列表&amp;amp;amp;有序集合 热度排名排行榜 发布时间排行榜 3.计数器应用-天然支持计数器 帖子浏览数 视频播放次数 商品浏览数 4.社交网络-集合 踩/赞,粉丝,共同好友/喜好,推送,打标签 5.消息队列系统-发布订阅 配合elk实现日志收集 第2章 Redis安装部署 2.1 目录规划 ### redis下载目录 /data/soft/ ### redis安装目录 /opt/redis_cluster/redis_{PORT}/{conf,logs,pid} ### redis数据目录 /data/redis_cluster/redis_{PORT}/redis_{PORT}.rdb ### redis运维脚本 /root/scripts/redis_shell.sh 2.2 安装命令 编辑hosts …</content></entry><entry><title>Tomcat各端口详解</title><url>/post/tomcat-detailed-explanation-z1jrrbj.html</url><categories/><tags><tag>运维</tag><tag>Linux</tag><tag>Tomcat</tag></tags><content type="html"><![CDATA[  Tomcat各端口详解 从tomcat配置文件中，我们可以看出，在启动tomcat的时候默认启动了3个端口，分别是8080（8443）、8009、8005。
 8080（8443）端口 &amp;lt;Connector port=&amp;#34;80&amp;#34; protocol=&amp;#34;HTTP/1.1&amp;#34; connectionTimeout=&amp;#34;20000&amp;#34; redirectPort=&amp;#34;8443&amp;#34; /&amp;gt; 这个应该是我们最熟悉的一个，平常开发测试也经常用，该Connector用于监听浏览器发送的请求，设置为80后可以直接使用 http://localhost 访问。
 http协议，其中redirectPort​表示如果发送的是https请求，就将请求发送到8443端口。
 8443是默认的https监听端口，默认是没有开启的，如果要开启由于tomcat不自带证书所以除了取消注释之外，还需要自己生成证书并指定。
