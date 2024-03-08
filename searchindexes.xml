@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Arch Linux使用archinstall快速安装配置2024版</title><url>/post/arch-linux-uses-archinstall-to-quickly-install-and-configures-version-2024-z1lazul.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Linux</tag><tag>Arch Linux</tag></tags><content type="html"> Arch Linux使用archinstall快速安装配置2024版 参考：https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>用索尼官方lut文件恢复照片图片色彩（拍照忘记关log3）</title><url>/post/use-sony-s-official-lut-file-to-restore-photos-and-pictures-forgot-to-close-log3-2prtyf.html</url><categories><category>多媒体技术</category></categories><tags><tag>图片处理</tag></tags><content type="html"> 用索尼官方lut文件恢复照片图片色彩（拍照忘记关log3） 拍照忘记关log3，拍出来图片灰灰的要命命，我觉得还可以抢救一下
+工具：能打开camera raw的软件（Ps、Lr、Br）
+参考：【【多此一举】如何在Lightroom中引入cube格式的lut进行调色】 https://www.bilibili.com/video/BV1iW4y1E7Aw/?share_source=copy_web&amp;vd_source=060a67fd53d735ce5086832f669200d5 用camera raw打开图片 ​​
+创建含lut的配置 ​​
+选择官方的lut（.cube）文件
+​​
+​​
+点确定回到camera raw
+加载配置 ​​
+这时看到颜色已经回来了
+​​
+在Lr和Br中可以同步设置批量还原 ​​</content></entry><entry><title>Arch Linux使用archinstall快速安装配置2024版</title><url>/post/arch-linux-uses-archinstall-to-quickly-install-and-configures-version-2024-z1lazul.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Linux</tag><tag>Arch Linux</tag></tags><content type="html"> Arch Linux使用archinstall快速安装配置2024版 参考：https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97
 官方安装指南比较繁琐，有提供archinstall​但是并没有详细介绍对应配置项，本教程根据自身安装经历编写
 安装前的准备 [​ 编辑 | 编辑源代码 ] 获取安装映像 [​ 编辑 | 编辑源代码 ] 打开 下载 页面，并根据需要的引导方式，获取 ISO 文件或 netboot 映像以及相应的 GnuPG 签名。
 阿里源：https://mirrors.aliyun.com/archlinux/iso/latest/
