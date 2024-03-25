@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>free命令</title><url>/post/free-command-sg6k1.html</url><categories><category>技术</category></categories><tags><tag>运维</tag></tags><content type="html"><![CDATA[  free命令 语　法： free [-bkmotV][-s &lt;间隔秒数&gt;] 补充说明：free 指令会显示内存的使用情况，包括实体内存，虚拟的交换文件内存，共享内存区段，以及系统核心使用的缓冲区等。 参　数： -b 以 Byte 为单位显示内存使用情况。 -k 以 KB 为单位显示内存使用情况。 -m 以 MB 为单位显示内存使用情况。 -o 不显示缓冲区调节列。 -s &lt;间隔秒数&gt; 持续观察内存使用状况。 -t 显示内存总和列。 -V 显示版本信息。 常用操作: free // 以KB为单位，显式系统内存使用情况 free -ml -s 1 //每秒以M为单位，显式系统内存详细使用情况。 free -c 4 -s 2 //为KB为单位，每2秒显式系统内存使用情况，一共显示4次 ​​
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>CPU 监控命令w、 top、 htop、 glances</title><url>/post/cpu-monitoring-command-w-top-htop-glances-zxou0i.html</url><categories><category>技术</category></categories><tags><tag>Linux</tag></tags><content type="html"><![CDATA[  CPU 监控命令w、 top、 htop、 glances w命令 ​w [options] [username]​
+$ w 21:45:07 up 1 day, 12:48, 1 user, load average: 1.05, 0.85, 0.56 USER TTY LOGIN@ IDLE JCPU PCPU WHAT debugpoi tty2 Thu08 36:48m 0.03s 0.03s /usr/libexec/gnome-session-binary 解释：USER​ 列给出了用户名，然后是终端号、登录日期时间、空闲时间、CPU 使用率，以及用户正在执行的进程。
+​USER​ - 在你的 Linux 或 BSD 系统中登录的用户名称。 ​TTY​ - 当前会话的终端标识符号。 ​FROM​ - 用户的主机名或 IP 地址。 ​LOGIN@​ - 用户登录的时间。它有时会根据你的系统设置显示日期。 ​IDLE​ - 用户与终端交互后的空闲时间。 ​JCPU​ - 该会话的所有用户进程使用的 CPU 时间。 ​PCPU​ - 该用户的进程（在 WHAT​ 字段中提到）使用的时间。 ​WHAT​ - 当前带参数的进程。 要停止显示标题，使用 -h​ 选项。它与 --no-header​ 开关相同。
+$ w -h ​-f​ 选项可以在输出中切换 FROM​ 字段的可见性。
+$ w -f 使用 -s​ 选项打印一个简短的输出，不包括 JCPU​、PCPU​ 和 LOGIN@​ 信息。
+$ w -s 要显示一个特定用户（例如，debugpoint​）拥有的所有进程的列表：
+$ w debugpoint top命令 一、简介
+top命令，它提供了一个动态的、交互式的实时视图，显示系统的整体性能信息以及正在运行的进程的相关信息。
+语法：
+​top [-] [d delay] [q] [c] [S] [s] [i] [n] [b]​
+参数说明：
+-d &amp;lt;秒数&amp;gt;：指定 top 命令的刷新时间间隔，单位为秒。
+-n &amp;lt;次数&amp;gt;：指定 top 命令运行的次数后自动退出。
+-p &amp;lt;进程ID&amp;gt;：仅显示指定进程ID的信息。
+-u &amp;lt;用户名&amp;gt;：仅显示指定用户名的进程信息。
+-H：在进程信息中显示线程详细信息。
+-i：不显示闲 …  ]]></content></entry><entry><title>free命令</title><url>/post/free-command-sg6k1.html</url><categories><category>技术</category></categories><tags><tag>运维</tag></tags><content type="html"><![CDATA[  free命令 语　法： free [-bkmotV][-s &lt;间隔秒数&gt;] 补充说明：free 指令会显示内存的使用情况，包括实体内存，虚拟的交换文件内存，共享内存区段，以及系统核心使用的缓冲区等。 参　数： -b 以 Byte 为单位显示内存使用情况。 -k 以 KB 为单位显示内存使用情况。 -m 以 MB 为单位显示内存使用情况。 -o 不显示缓冲区调节列。 -s &lt;间隔秒数&gt; 持续观察内存使用状况。 -t 显示内存总和列。 -V 显示版本信息。 常用操作: free // 以KB为单位，显式系统内存使用情况 free -ml -s 1 //每秒以M为单位，显式系统内存详细使用情况。 free -c 4 -s 2 //为KB为单位，每2秒显式系统内存使用情况，一共显示4次 ​​
 Mem 行(第二行)是内存的使用情况。
 Swap 行(第三行)是交换空间的使用情况。
 total 列显示系统总的可用物理内存和交换空间大小。
