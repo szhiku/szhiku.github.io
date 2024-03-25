@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>用索尼官方lut文件恢复照片图片色彩（拍照忘记关log3）</title><url>/post/use-sony-s-official-lut-file-to-restore-photos-and-pictures-forgot-to-close-log3-2prtyf.html</url><categories><category>多媒体技术</category></categories><tags><tag>图片处理</tag></tags><content type="html"> 用索尼官方lut文件恢复照片图片色彩（拍照忘记关log3） 拍照忘记关log3，拍出来图片灰灰的要命命，我觉得还可以抢救一下
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>free命令</title><url>/post/free-command-sg6k1.html</url><categories><category>技术</category></categories><tags><tag>运维</tag></tags><content type="html"><![CDATA[  free命令 语　法： free [-bkmotV][-s &lt;间隔秒数&gt;] 补充说明：free 指令会显示内存的使用情况，包括实体内存，虚拟的交换文件内存，共享内存区段，以及系统核心使用的缓冲区等。 参　数： -b 以 Byte 为单位显示内存使用情况。 -k 以 KB 为单位显示内存使用情况。 -m 以 MB 为单位显示内存使用情况。 -o 不显示缓冲区调节列。 -s &lt;间隔秒数&gt; 持续观察内存使用状况。 -t 显示内存总和列。 -V 显示版本信息。 常用操作: free // 以KB为单位，显式系统内存使用情况 free -ml -s 1 //每秒以M为单位，显式系统内存详细使用情况。 free -c 4 -s 2 //为KB为单位，每2秒显式系统内存使用情况，一共显示4次 ​​
+Mem 行(第二行)是内存的使用情况。
+Swap 行(第三行)是交换空间的使用情况。
+total 列显示系统总的可用物理内存和交换空间大小。
+used 列显示已经被使用的物理内存和交换空间。
+free 列显示还有多少物理内存和交换空间可用使用。
+shared 列显示被共享使用的物理内存大小。
+buff/cache 列显示被 buffer 和 cache 使用的物理内存大小。
+available 列显示还可以被应用程序使用的物理内存大小。
+————————————————
+版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
+原文链接：https://blog.csdn.net/weixin_42832313/article/details/96484017
+  ]]></content></entry><entry><title>用索尼官方lut文件恢复照片图片色彩（拍照忘记关log3）</title><url>/post/use-sony-s-official-lut-file-to-restore-photos-and-pictures-forgot-to-close-log3-2prtyf.html</url><categories><category>多媒体技术</category></categories><tags><tag>图片处理</tag></tags><content type="html"> 用索尼官方lut文件恢复照片图片色彩（拍照忘记关log3） 拍照忘记关log3，拍出来图片灰灰的要命命，我觉得还可以抢救一下
 工具：能打开camera raw的软件（Ps、Lr、Br）
 参考：【【多此一举】如何在Lightroom中引入cube格式的lut进行调色】 https://www.bilibili.com/video/BV1iW4y1E7Aw/?share_source=copy_web&amp;vd_source=060a67fd53d735ce5086832f669200d5 用camera raw打开图片 ​​
 创建含lut的配置 ​​
