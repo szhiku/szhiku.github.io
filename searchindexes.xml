@@ -152,20 +152,7 @@ sh your_script.sh 这种方式不需要执行权限，会使用指定的解释�
 source your_script.sh 或者简写为：
 . your_script.sh 这种方式会在当前shell环境中执行脚本，而不是启动一个新的进程。这意味着脚本中的变量和函数等将在当前shell中生效。
 这几种方法的主要区别在于执行环境和作用域。直接运行和通过bash解释器运行都会创建一个新的进程，而source命令则在当前shell中执行，因此会影响当前环境。选择执行方式取决于你的需求，如果脚本需要修改当前shell的环境变量或执行其他会影响当前环境的操作，建议使用source命令。
-  </content></entry><entry><title>思源笔记一键发布至Hexo、Hugo、Jekyll、Vitepress、Vuepress博客（github）并通过github action构建page并同步gitee page</title><url>/post/siyuan-notes-are-published-to-hexo-hugo-jekyll-vitepress-vuepress-blog-github-and-through-github-action-bsbh2.html</url><categories><category>技术</category></categories><tags><tag>思源笔记</tag><tag>运维</tag></tags><content type="html"><![CDATA[  思源笔记一键发布至Hexo、Hugo、Jekyll、Vitepress、Vuepress博客（github）并通过github action构建page并同步gitee page 先决条件：思源笔记、一键发布工具、Hexo\Hugo\Jekyll\Vitepress\Vuepress相关主题
-以Hugo的 hugo-theme-next 主题示例，其他的同理，构建文件不同
-注意事项：Hugo使用无序和有序列表尽量不要超过3层
-部署和配置时长：1小时+
-部署流程：克隆Hugo主题至自己仓库-&amp;gt;创建主页仓库-&amp;gt;获取github个人访问令牌token-&amp;gt;github action构建并输出至主页主页-&amp;gt;gitee导入github仓库并配置镜像仓库-&amp;gt;开通gitee page-&amp;gt;配置 hugo-theme-next 使用流程：思源笔记一键发布插件配置-&amp;gt;使用一键发布插件发布文章并选择hugo
-部署详情：
-克隆Hugo主题至自己仓库
-⏬ 克隆主题 点击右上角的 Use this template​​ 绿色按钮然后填写代码仓库的相关信息，参考如下：
-https://camo.githubusercontent.com/0031520ad9bb551333a37cf756fbfb3f538e6f33638cd3318e5d70f94aae28e8/68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67 最后点击 Create repository from template​​ 绿色按钮，会直接在你的空间中生成站点代码，再使用git clone​​命令把它克隆到本地进行创作。
-记得首次完全克隆后，需要在根目录中使用如下的 Git​​ 子模块更新命令拉取 hugo-theme-next​​ 主题的最新版本。
-创建主页仓库
-自定义首页，首先需要创建一个与你 Github ID 同名的仓库
-​​
-创建完成后就可以开始为你的首页添加一些有趣的内容了，代码格式可以是 markdown​ 语法，也可以是 HTML​ 语法，但 HTML 的扩展性更强一点，因此笔者使用的 …  ]]></content></entry><entry><title>Tomcat学习路线roadmap和个人入门知识摘录</title><url>/post/tomcat-learning-route-roadmap-and-personal-entry-knowledge-excerpt-1xckaw.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Tomcat</tag></tags><content type="html">  Tomcat学习路线roadmap和个人入门知识摘录 roadmap 参考《TOMCAT与JAVA WEB开发技术详解 第3版》，内容非常非常详细，初期入门并不需要学习到那么详细，后面精进学习可按图索骥，或者有需要再看看就行 第 1 章 Web 运作原理探析
+  </content></entry><entry><title>Tomcat学习路线roadmap和个人入门知识摘录</title><url>/post/tomcat-learning-route-roadmap-and-personal-entry-knowledge-excerpt-1xckaw.html</url><categories><category>技术</category></categories><tags><tag>运维</tag><tag>Tomcat</tag></tags><content type="html">  Tomcat学习路线roadmap和个人入门知识摘录 roadmap 参考《TOMCAT与JAVA WEB开发技术详解 第3版》，内容非常非常详细，初期入门并不需要学习到那么详细，后面精进学习可按图索骥，或者有需要再看看就行 第 1 章 Web 运作原理探析
 读者不妨带着以下问题去阅读本章开头的内容：
 ●在整个 Web体系中，浏览器和Web服务器各自的功能是什么?
 ●浏览器和Web服务器采用HTTP协议进行通信，该协议规定了通信的哪些具体细节?
