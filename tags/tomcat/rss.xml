@@ -1,1 +1,118 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tomcat on szhiku.cn</title><link>https://szhiku.github.io/tags/tomcat/</link><description>Recent content in Tomcat on szhiku.cn</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 05 Mar 2024 02:07:50 +0000</lastBuildDate><atom:link href="https://szhiku.github.io/tags/tomcat/rss.xml" rel="self" type="application/rss+xml"/><item><title>Tomcat各端口详解</title><link>https://szhiku.github.io/post/tomcat-detailed-explanation-z1jrrbj.html</link><pubDate>Tue, 05 Mar 2024 02:06:01 +0000</pubDate><guid>https://szhiku.github.io/post/tomcat-detailed-explanation-z1jrrbj.html</guid><description>Tomcat各端口详解 从tomcat配置文件中，我们可以看出，在启动tomcat的时候默认启动了3个端口，分别是8080（8443）、800</description></item><item><title>Tomcat安全配置、管理规范整理</title><link>https://szhiku.github.io/post/tomcat-security-configuration-management-specifications-1u324h.html</link><pubDate>Tue, 05 Mar 2024 01:31:29 +0000</pubDate><guid>https://szhiku.github.io/post/tomcat-security-configuration-management-specifications-1u324h.html</guid><description>Tomcat安全配置、管理规范整理 参考： Tomcat安全管理规范：https://blog.csdn.net/wuxingge/articl</description></item><item><title>Tomcat 的组成结构和主配置文件Server.xml详解</title><link>https://szhiku.github.io/post/tomcat-s-composition-structure-and-main-configuration-file-serverxml-detailed-explanation-15kcly.html</link><pubDate>Mon, 04 Mar 2024 18:32:11 +0000</pubDate><guid>https://szhiku.github.io/post/tomcat-s-composition-structure-and-main-configuration-file-serverxml-detailed-explanation-15kcly.html</guid><description>Tomcat 的组成结构和主配置文件Server.xml详解 参考：《TOMCAT与JAVA WEB开发技术详解 第3版》 https://www.jianshu.com/p/2789af11299f Tomcat 本身由一系列可配置的组件构成，其</description></item><item><title>Tomcat 的目录结构</title><link>https://szhiku.github.io/post/tomcat-s-directory-structure-zdhbtf.html</link><pubDate>Mon, 04 Mar 2024 18:05:57 +0000</pubDate><guid>https://szhiku.github.io/post/tomcat-s-directory-structure-zdhbtf.html</guid><description>Tomcat 的目录结构 Tomcat9.x 的目录结构参见 表 3-3, 表中的目录都是＜CATALINA_HOME＞ 的子目录。 ​​ 在Linux系统中如下 [root@sweb01 ~]# cd /opt/tomcat/ [root@sweb01 /opt/tomcat]# tree -L 1 ├── bin #</description></item><item><title>Tomcat一键部署脚本</title><link>https://szhiku.github.io/post/tomcat-one-click-deployment-script-1zvvpr.html</link><pubDate>Mon, 04 Mar 2024 11:59:14 +0000</pubDate><guid>https://szhiku.github.io/post/tomcat-one-click-deployment-script-1zvvpr.html</guid><description>Tomcat一键部署脚本 环境：centos7、已安装wget、已换阿里源 简易脚本，抛砖引玉 Tomcat一键部署脚本 #!/bin/bash # 安装Java yum install java-1.8.0 -y #</description></item><item><title>Tomcat学习路线roadmap和个人入门知识摘录</title><link>https://szhiku.github.io/post/tomcat-learning-route-roadmap-and-personal-entry-knowledge-excerpt-1xckaw.html</link><pubDate>Sun, 18 Feb 2024 01:07:08 +0000</pubDate><guid>https://szhiku.github.io/post/tomcat-learning-route-roadmap-and-personal-entry-knowledge-excerpt-1xckaw.html</guid><description>Tomcat学习路线roadmap和个人入门知识摘录 roadmap 参考《TOMCAT与JAVA WEB开发技术详解 第3版》，内容非常非常详细，初期入门并不</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tomcat on szhiku.cn</title><link>https://szhiku.github.io/tags/tomcat/</link><description>Recent content in Tomcat on szhiku.cn</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 05 Mar 2024 02:07:50 +0000</lastBuildDate><atom:link href="https://szhiku.github.io/tags/tomcat/rss.xml" rel="self" type="application/rss+xml"/><item><title>Tomcat各端口详解</title><link>https://szhiku.github.io/post/tomcat-detailed-explanation-z1jrrbj.html</link><pubDate>Tue, 05 Mar 2024 02:06:01 +0000</pubDate><guid>https://szhiku.github.io/post/tomcat-detailed-explanation-z1jrrbj.html</guid><description>&lt;h1 id="tomcat各端口详解">Tomcat各端口详解
+&lt;a class="header-anchor" href="#tomcat%e5%90%84%e7%ab%af%e5%8f%a3%e8%af%a6%e8%a7%a3">&lt;/a>
+&lt;/h1>&lt;p>　　从tomcat配置文件中，我们可以看出，在启动tomcat的时候默认启动了3个端口，分别是8080（8443）、8009、8005。&lt;/p>
+&lt;hr>
+&lt;h3 id="80808443端口">8080（8443）端口
+&lt;a class="header-anchor" href="#80808443%e7%ab%af%e5%8f%a3">&lt;/a>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;Connector&lt;/span> &lt;span style="color:#a6e22e">port=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;80&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">protocol=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;HTTP/1.1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">connectionTimeout=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;20000&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">redirectPort=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;8443&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>　　这个应该是我们最熟悉的一个，平常开发测试也经常用，该Connector用于&lt;span style="font-weight: bold;" class="bold">监听浏览器发送的请求&lt;/span>，设置为80后可以直接使用
+&lt;a href="https://links.jianshu.com/go?to=http%3A%2F%2Flocalhost" title="http://localhost" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ http://localhost
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>访问。&lt;/p></description></item><item><title>Tomcat安全配置、管理规范整理</title><link>https://szhiku.github.io/post/tomcat-security-configuration-management-specifications-1u324h.html</link><pubDate>Tue, 05 Mar 2024 01:31:29 +0000</pubDate><guid>https://szhiku.github.io/post/tomcat-security-configuration-management-specifications-1u324h.html</guid><description>&lt;h1 id="tomcat安全配置管理规范整理">Tomcat安全配置、管理规范整理
+&lt;a class="header-anchor" href="#tomcat%e5%ae%89%e5%85%a8%e9%85%8d%e7%bd%ae%e7%ae%a1%e7%90%86%e8%a7%84%e8%8c%83%e6%95%b4%e7%90%86">&lt;/a>
+&lt;/h1>&lt;blockquote>
+&lt;p>参考：&lt;br>
+Tomcat安全管理规范：https://blog.csdn.net/wuxingge/article/details/116517777&lt;br>
+tomcat 安全规范(tomcat安全加固和规范)：https://www.jb51.net/article/173899.htm&lt;br>
+
+&lt;a href="https://www.cnblogs.com/klslb/p/9232176.html" title="omcat安全配置规范" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ omcat安全配置规范
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item><item><title>Tomcat 的组成结构和主配置文件Server.xml详解</title><link>https://szhiku.github.io/post/tomcat-s-composition-structure-and-main-configuration-file-serverxml-detailed-explanation-15kcly.html</link><pubDate>Mon, 04 Mar 2024 18:32:11 +0000</pubDate><guid>https://szhiku.github.io/post/tomcat-s-composition-structure-and-main-configuration-file-serverxml-detailed-explanation-15kcly.html</guid><description>&lt;h1 id="tomcat-的组成结构和主配置文件serverxml详解">Tomcat 的组成结构和主配置文件Server.xml详解
+&lt;a class="header-anchor" href="#tomcat-%e7%9a%84%e7%bb%84%e6%88%90%e7%bb%93%e6%9e%84%e5%92%8c%e4%b8%bb%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6serverxml%e8%af%a6%e8%a7%a3">&lt;/a>
+&lt;/h1>&lt;blockquote>
+&lt;p>参考：《TOMCAT与JAVA WEB开发技术详解 第3版》&lt;br>
+
+&lt;a href="https://www.jianshu.com/p/2789af11299f" title="https://www.jianshu.com/p/2789af11299f" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ https://www.jianshu.com/p/2789af11299f
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>　　Tomcat 本身由一系列可配置的组件构成，其中核心组件是 Servlet容器组件，它是所有 其他 Tomcat 组件的顶层容器，用＜CATALINA_HOME＞ 表示 Tomcat 的安装根目录。Tomcat 的各个组件可以在/conf7server.xml 文件中进行配 置，每个 Tomcat 组件在 server.xml 文件中对应一种配置元素。以下代码以 XML 的形式展示 了各种 Tomcat 组件之间的关系：&lt;/p></description></item><item><title>Tomcat 的目录结构</title><link>https://szhiku.github.io/post/tomcat-s-directory-structure-zdhbtf.html</link><pubDate>Mon, 04 Mar 2024 18:05:57 +0000</pubDate><guid>https://szhiku.github.io/post/tomcat-s-directory-structure-zdhbtf.html</guid><description>&lt;h1 id="tomcat-的目录结构">Tomcat 的目录结构
+&lt;a class="header-anchor" href="#tomcat-%e7%9a%84%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84">&lt;/a>
+&lt;/h1>&lt;p>　　Tomcat9.x 的目录结构参见 表 3-3, 表中的目录都是＜CATALINA_HOME＞ 的子目录。&lt;br>
+​&lt;img src="https://szhiku.github.io/imgs/img-lazy-loading.gif" data-src="https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/202403041810472.png" alt="image" />​&lt;/p>
+&lt;p>　　在Linux系统中如下&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>[root@sweb01 ~]# cd /opt/tomcat/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[root@sweb01 /opt/tomcat]# tree -L 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── bin #用以启动,关闭Tomcat或其他脚本功能的脚本(.bat和.sh)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── conf #用以配置Tomcat的XML及DTD文件
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── lib #存放web应用能访问的JAR包
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── logs #Catalina和其他web应用程序的日志文件
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── temp #临时文件
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── webapps #Web应用程序根目录
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── work #用以产生有JSP编译出的Servlet的.java和.class文件
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>　　webapps目录&lt;/p></description></item><item><title>Tomcat一键部署脚本</title><link>https://szhiku.github.io/post/tomcat-one-click-deployment-script-1zvvpr.html</link><pubDate>Mon, 04 Mar 2024 11:59:14 +0000</pubDate><guid>https://szhiku.github.io/post/tomcat-one-click-deployment-script-1zvvpr.html</guid><description>&lt;h1 id="tomcat一键部署脚本">Tomcat一键部署脚本
+&lt;a class="header-anchor" href="#tomcat%e4%b8%80%e9%94%ae%e9%83%a8%e7%bd%b2%e8%84%9a%e6%9c%ac">&lt;/a>
+&lt;/h1>&lt;p>　　环境：centos7、已安装wget、已换阿里源&lt;/p>
+&lt;p>　　简易脚本，抛砖引玉&lt;/p>
+&lt;h4 id="tomcat一键部署脚本-1">Tomcat一键部署脚本
+&lt;a class="header-anchor" href="#tomcat%e4%b8%80%e9%94%ae%e9%83%a8%e7%bd%b2%e8%84%9a%e6%9c%ac-1">&lt;/a>
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>#!/bin/bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 安装Java
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>yum install java-1.8.0 -y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 检查Java是否安装成功
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>java -version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>if [ $? -ne 0 ]; then
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &amp;#34;Java安装失败，请检查后重试。&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exit 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 创建软件目录
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir -p /data/soft
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 切换到软件目录
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /data/soft
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 下载Tomcat安装包
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.99/bin/apache-tomcat-8.5.99.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 解压Tomcat安装包到/opt目录
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar zxf apache-tomcat-8.5.99.tar.gz -C /opt/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 创建软链接
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ln -s /opt/apache-tomcat-8.5.99 /opt/tomcat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 配置环境变量
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &amp;#39;export TOMCAT_HOME=/opt/tomcat&amp;#39; &amp;gt;&amp;gt; /etc/profile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source /etc/profile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 启动Tomcat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/opt/tomcat/bin/startup.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 检查Tomcat是否启动成功
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>if [ $? -eq 0 ]; then
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &amp;#34;Tomcat安装并启动成功。&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>else
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &amp;#34;Tomcat启动失败，请检查日志。&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exit 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 检查Tomcat服务是否正在运行
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ps -ef | grep tomcat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 显示Tomcat日志
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tail -f /opt/tomcat/logs/catalina.out
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 脚本结束
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Tomcat学习路线roadmap和个人入门知识摘录</title><link>https://szhiku.github.io/post/tomcat-learning-route-roadmap-and-personal-entry-knowledge-excerpt-1xckaw.html</link><pubDate>Sun, 18 Feb 2024 01:07:08 +0000</pubDate><guid>https://szhiku.github.io/post/tomcat-learning-route-roadmap-and-personal-entry-knowledge-excerpt-1xckaw.html</guid><description>&lt;h1 id="tomcat学习路线roadmap和个人入门知识摘录">Tomcat学习路线roadmap和个人入门知识摘录
+&lt;a class="header-anchor" href="#tomcat%e5%ad%a6%e4%b9%a0%e8%b7%af%e7%ba%bfroadmap%e5%92%8c%e4%b8%aa%e4%ba%ba%e5%85%a5%e9%97%a8%e7%9f%a5%e8%af%86%e6%91%98%e5%bd%95">&lt;/a>
+&lt;/h1>&lt;h4 id="roadmap">roadmap
+&lt;a class="header-anchor" href="#roadmap">&lt;/a>
+&lt;/h4>&lt;ul>
+&lt;li>
+&lt;h3 id="参考tomcat与java-web开发技术详解--第3版内容非常非常详细初期入门并不需要学习到那么详细后面精进学习可按图索骥或者有需要再看看就行">参考《TOMCAT与JAVA WEB开发技术详解 第3版》，内容非常非常详细，初期入门并不需要学习到那么详细，后面精进学习可按图索骥，或者有需要再看看就行
+&lt;a class="header-anchor" href="#%e5%8f%82%e8%80%83tomcat%e4%b8%8ejava-web%e5%bc%80%e5%8f%91%e6%8a%80%e6%9c%af%e8%af%a6%e8%a7%a3--%e7%ac%ac3%e7%89%88%e5%86%85%e5%ae%b9%e9%9d%9e%e5%b8%b8%e9%9d%9e%e5%b8%b8%e8%af%a6%e7%bb%86%e5%88%9d%e6%9c%9f%e5%85%a5%e9%97%a8%e5%b9%b6%e4%b8%8d%e9%9c%80%e8%a6%81%e5%ad%a6%e4%b9%a0%e5%88%b0%e9%82%a3%e4%b9%88%e8%af%a6%e7%bb%86%e5%90%8e%e9%9d%a2%e7%b2%be%e8%bf%9b%e5%ad%a6%e4%b9%a0%e5%8f%af%e6%8c%89%e5%9b%be%e7%b4%a2%e9%aa%a5%e6%88%96%e8%80%85%e6%9c%89%e9%9c%80%e8%a6%81%e5%86%8d%e7%9c%8b%e7%9c%8b%e5%b0%b1%e8%a1%8c">&lt;/a>
+&lt;/h3>&lt;/li>
+&lt;li>
+&lt;p>第 1 章 Web 运作原理探析&lt;/p></description></item></channel></rss>
