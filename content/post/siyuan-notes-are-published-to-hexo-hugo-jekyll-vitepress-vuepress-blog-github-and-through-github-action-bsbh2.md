@@ -18,6 +18,8 @@ keywords: 思源笔记,运维
 isCJKLanguage: true
 ---
 
+
+
 # 思源笔记一键发布至Hexo、Hugo、Jekyll、Vitepress、Vuepress博客（github）并通过github action构建page并同步gitee page
 
 　　先决条件：思源笔记、一键发布工具、Hexo\Hugo\Jekyll\Vitepress\Vuepress相关主题
@@ -40,7 +42,7 @@ isCJKLanguage: true
 
     点击右上角的 `Use this template`​​ 绿色按钮然后填写代码仓库的相关信息，参考如下：
 
-    ​![使用模板创建](https://camo.githubusercontent.com/0031520ad9bb551333a37cf756fbfb3f538e6f33638cd3318e5d70f94aae28e8/68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67)[https://camo.githubusercontent.com/0031520ad9bb551333a37cf756fbfb3f538e6f33638cd3318e5d70f94aae28e8/68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67](https://camo.githubusercontent.com/0031520ad9bb551333a37cf756fbfb3f538e6f33638cd3318e5d70f94aae28e8/68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67)
+    ![使用模板创建](assets/net-img-68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67-20240219134347-1yf61br.png)[https://camo.githubusercontent.com/0031520ad9bb551333a37cf756fbfb3f538e6f33638cd3318e5d70f94aae28e8/68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67](https://camo.githubusercontent.com/0031520ad9bb551333a37cf756fbfb3f538e6f33638cd3318e5d70f94aae28e8/68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67)
 
     最后点击 `Create repository from template`​​ 绿色按钮，会直接在你的空间中生成站点代码，再使用`git clone`​​命令把它克隆到本地进行创作。
 
@@ -49,7 +51,9 @@ isCJKLanguage: true
 
   * 自定义首页，首先需要创建一个与你 Github ID 同名的仓库
 
-    ​![创建同名仓库](https://img-blog.csdnimg.cn/9abe35e659ec4aba9ad9ab1ea89b3b3b.png)​
+    ![image](assets/image-20240219134246-p234dqf.png)
+
+    ​​
 
     创建完成后就可以开始为你的首页添加一些有趣的内容了，代码格式可以是 `markdown`​ 语法，也可以是 `HTML`​ 语法，但 HTML 的扩展性更强一点，因此笔者使用的是 HTML 语法
 * 获取github个人访问令牌token
@@ -58,7 +62,7 @@ isCJKLanguage: true
 
   以下是如何生成Personal Access Token并将其添加到GitHub仓库的Secrets中的详细步骤：
 
-  1. <span style="font-weight: bold;" class="bold">生成Personal Access Token</span>：
+  1. **生成Personal Access Token**：
 
   ```text
   - 登录到您的`GitHub`账户。
@@ -72,23 +76,23 @@ isCJKLanguage: true
   - 点击右上角的`Generate token`（生成令牌）按钮。
   ```
 
-  ​![](https://pic2.zhimg.com/80/v2-d8374af8e1d58757770b79ebea8d6165_720w.webp)​
+  ![](assets/net-img-v2-d8374af8e1d58757770b79ebea8d6165_720w-20240219134347-di0w4pu.webp)
 
-  2. <span style="font-weight: bold;" class="bold">配置Personal Access Token的权限</span>：
+  2. **配置Personal Access Token的权限**：
 
   ```text
   当您生成`Personal Access Token`时，需要为其分配适当的权限。根据您的需求，可以为其分配不同的权限，例如访问仓库、读取用户资料等。请谨慎选择权限，最小化所需的权限以提高安全性。
   ```
 
-  ​![](https://pic4.zhimg.com/80/v2-ffd1fae6f18feaf9a4dc8cd2677f8373_720w.webp)​
+  ![](assets/net-img-v2-ffd1fae6f18feaf9a4dc8cd2677f8373_720w-20240219134347-dh1j1we.webp)
 
-  3. <span style="font-weight: bold;" class="bold">生成令牌</span>：
+  3. **生成令牌**：
 
   ```text
   在配置了权限后，滚动到页面底部，然后单击`Generate token`（生成令牌）。`GitHub`将生成一个令牌，并将其显示在屏幕上。请务必将此令牌复制到安全的地方，因为在生成后，您将无法再次查看完整的令牌。
   ```
 
-  4. <span style="font-weight: bold;" class="bold">将令牌添加到GitHub仓库的Secrets</span>：
+  4. **将令牌添加到GitHub仓库的Secrets**：
 
   ```text
   - 转到包含您的博客源文件的GitHub仓库。
@@ -106,11 +110,11 @@ isCJKLanguage: true
   - 单击`Add secret`（添加密码）按钮。
   ```
 
-  ​![](https://pic2.zhimg.com/80/v2-1c608b3468765b402d771d6b2766533d_720w.webp)​
+  ![](assets/net-img-v2-1c608b3468765b402d771d6b2766533d_720w-20240219134347-0tj3tzd.webp)
 
-  ​![](https://pic1.zhimg.com/80/v2-a0e5a222dcb3eee33a2d9feb6958bdcc_720w.webp)​
+  ![](assets/net-img-v2-a0e5a222dcb3eee33a2d9feb6958bdcc_720w-20240219134347-rxafbvf.webp)
 
-  ​![](https://pic4.zhimg.com/80/v2-4a269aef8ba5a58672759e584a2a7f37_720w.webp)​
+  ![](assets/net-img-v2-4a269aef8ba5a58672759e584a2a7f37_720w-20240219134347-qryzvzk.webp)
 
   现在，您的`Personal Access Token`​已经以安全的方式存储在`GitHub`​仓库的`Secrets`​中，并可以在`GitHub Action`​的工作流程中使用。
 
@@ -164,29 +168,29 @@ isCJKLanguage: true
     ```
   * 之后点右上角的commit（提交），会自动触发构建，构建详情如下图
 
-    ​![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/202402191302174.png)​​​
+    ![](assets/net-img-202402191302174-20240219134421-tqdod40.png)​​​
   * 正常的话，github pages已经可以了
 
     点击设置，再点击右边栏上的 Pages
 
-    ​![](https://img-blog.csdnimg.cn/img_convert/90d49c1edee7248ec11340d254384615.png)​
+    ![](assets/net-img-90d49c1edee7248ec11340d254384615-20240219134421-c6eav4e.png)
 
     5. 设置 main 分支，root 根文件夹，并点击保存
 
-    ​![](https://img-blog.csdnimg.cn/img_convert/e35c83245050bff365d075ea16373240.png)​
+    ![](assets/net-img-e35c83245050bff365d075ea16373240-20240219134421-yohzmue.png)
 
     6. 可以看到 Actions 中已经在构建和部署页面了
 
-    ​![](https://img-blog.csdnimg.cn/img_convert/b0bf870906f11bb045517a7594fb9fea.png)​
+    ![](assets/net-img-b0bf870906f11bb045517a7594fb9fea-20240219134421-yr69oif.png)
 
     7. 构建完成后，重新回到 设置的Pages 页，可以看到多了如下的提示，点击查看即可
 
-    ​![](https://img-blog.csdnimg.cn/img_convert/73c1d6dd1243661a32e6b171bd05e937.png)​
+    ![](assets/net-img-73c1d6dd1243661a32e6b171bd05e937-20240219134421-bc1un35.png)
 * gitee导入github仓库并配置镜像仓库
 
   * 登录gitee导入github仓库
 
-    ​![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/202402191312616.png)​
+    ![](assets/net-img-202402191312616-20240219134421-8k71xcy.png)
   * 添加 Pull 方向的镜像
 
     Pull 方向的镜像用于将 `GitHub`​ 的仓库镜像到 `Gitee`​ 。
@@ -201,9 +205,9 @@ isCJKLanguage: true
         > 如果你还没有绑定 GitHub 帐号，请根据弹窗提示绑定 GitHub 帐号；
         >
 
-        ​![输入图片说明](https://images.gitee.com/uploads/images/2021/0609/110626_76a3ab9b_8249553.png "12.png")​
+        ![输入图片说明](assets/net-img-110626_76a3ab9b_8249553-20240219134422-lpenit9.png "12.png")
     2. 添加镜像；  
-        ​![输入图片说明](https://images.gitee.com/uploads/images/2021/0609/111013_4806d22e_8249553.png "13.png")​
+        ​![输入图片说明](assets/net-img-111013_4806d22e_8249553-20240219134422-xsfb6n3.png "13.png")
 
         1. 在「镜像方向」中选择 Pull 方向；
         2. 在「镜像仓库」下拉列表中选择需要镜像的仓库；
@@ -233,35 +237,35 @@ isCJKLanguage: true
     >
 * 开通gitee page
 
-  * <span style="font-weight: bold;" class="bold">A.新建仓库 test_pages</span>
+  * **A.新建仓库 test_pages**
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26173338_Pmcg.png)​
+    ![输入图片说明](assets/net-img-26173338_Pmcg-20240219134422-shk3ffc.png)
 
     点击创建完成仓库的创建
 
-    **B.添加文件** <span style="font-weight: bold;" class="bold">`index.html`</span>​  <span style="font-weight: bold;" class="bold">(注意名称是 index.html 哦！)</span>
+    **B.添加文件** **​`index.html`​**​  **(注意名称是 index.html 哦！)**
 
     点击新建文件
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26172523_5GI8.png)​
+    ![输入图片说明](assets/net-img-26172523_5GI8-20240219134422-6dx839q.png)
 
     文件名输入`index.html`​，内容就是简单的`html`​
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26173106_Jn2d.png)​
+    ![输入图片说明](assets/net-img-26173106_Jn2d-20240219134423-q70k0xn.png)
 
     点击提交，将文件提交到仓库
 
-    <span style="font-weight: bold;" class="bold">C.选择 pages 服务</span>
+    **C.选择 pages 服务**
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26173423_zzeF.png)​
+    ![输入图片说明](assets/net-img-26173423_zzeF-20240219134423-ptu674m.png)
 
-    <span style="font-weight: bold;" class="bold">D.选择需要部署的分支，这里选择 Master 启动服务。</span>
+    **D.选择需要部署的分支，这里选择 Master 启动服务。**
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26173508_e3TE.png)​
+    ![输入图片说明](assets/net-img-26173508_e3TE-20240219134423-6g1nv74.png)
 
-    <span style="font-weight: bold;" class="bold">E.访问生成的网站地址，即可以查看你部署的静态页面啦！</span>
+    **E.访问生成的网站地址，即可以查看你部署的静态页面啦！**
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26173825_h9D1.png) ![输入图片说明](https://static.oschina.net/uploads/img/201806/26173847_USPU.png)​
+    ![输入图片说明](assets/net-img-26173825_h9D1-20240219134423-3ev7gxk.png) ![输入图片说明](assets/net-img-26173847_USPU-20240219134423-0r3pfoj.png)
 
     ### 3. 已经有 Pages 仓库如何部署到 Gitee 的 Pages
 
@@ -271,46 +275,46 @@ isCJKLanguage: true
 
     如果想把它转移到 Gitee Pages，只需要登录你的 Gitee 账户，点击右上角的 `+`​ 号，选择新建仓库
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26174500_j9HQ.png)​
+    ![输入图片说明](assets/net-img-26174500_j9HQ-20240219134423-xpjs2uk.png)
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26174556_lc6V.png)​
+    ![输入图片说明](assets/net-img-26174556_lc6V-20240219134423-cobl7ux.png)
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26174630_Kpri.png)​
+    ![输入图片说明](assets/net-img-26174630_Kpri-20240219134423-4kpmkb9.png)
 
     然后点击创建，仓库会在后台自动导入，导入成功后，点击菜单栏的服务下拉`Gitee Pages`​
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26175015_PomW.png)​
+    ![输入图片说明](assets/net-img-26175015_PomW-20240219134423-nns3gvu.png)
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26175207_KKZ0.png)​
+    ![输入图片说明](assets/net-img-26175207_KKZ0-20240219134423-lwqky50.png)
 
     这里我们默认的`Pages`​服务分支是仓库的默认分支，但是你也已选择自己静态页面所在的分支，这里`jQuery-File-Upload`​仓库的静态页面分支是`gh-pages`​，选择`gh-pages`​并点击启动服务。
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26175333_xxzm.png) 至此，静态网页已经部署成功，访问提供的地址：[https://frech.gitee.io/jquery-file-upload/](https://frech.gitee.io/jquery-file-upload/) 即可查看到`jQuery-File-Upload`​仓库的静态官网。
+    ![输入图片说明](assets/net-img-26175333_xxzm-20240219134424-ee0yxiw.png) 至此，静态网页已经部署成功，访问提供的地址：[https://frech.gitee.io/jquery-file-upload/](https://frech.gitee.io/jquery-file-upload/) 即可查看到`jQuery-File-Upload`​仓库的静态官网。
 
-    ​![输入图片说明](https://static.oschina.net/uploads/img/201806/26175421_ikZP.png)​
+    ![输入图片说明](assets/net-img-26175421_ikZP-20240219134424-7z7efoe.png)
 * 配置[hugo-theme-next](https://github.com/hugo-next/hugo-theme-next-starter)
 
   * 来到这个文件夹
 
-    ​![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/202402191326427.png)​
+    ![](assets/net-img-202402191326427-20240219134424-czvthq8.png)
   * 按照备注说明依次修改配置文件config.yaml、menus.yaml、params.yaml，修改后记得点击右上角绿色的commt，之后会自动构建
 
-    ​![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/202402191326204.png)​
+    ![](assets/net-img-202402191326204-20240219134424-wtmsi8q.png)
 
 　　使用详情：
 
 * 思源笔记一键发布插件配置
 
-  ​![image](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/202402191331723.png)​
+  ![image](assets/image-20240219132807-j71e65k.png)
 
-  ​![image](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/202402191331464.png)
+  ![image](assets/image-20240219132847-sjv5p59.png)
 
-  ​![image](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/202402191331303.png)​
+  ![image](assets/image-20240219133012-jo8yqb4.png)
 * 使用一键发布插件发布文章并选择hugo
 
-  ​![image](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/202402191331082.png)
+  ![image](assets/image-20240219133033-c400yl4.png)
 
-  ​![image](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/202402191331101.png)​
+  ![image](assets/image-20240219133114-eo3gmsd.png)
 
 　　参考资料：
 
