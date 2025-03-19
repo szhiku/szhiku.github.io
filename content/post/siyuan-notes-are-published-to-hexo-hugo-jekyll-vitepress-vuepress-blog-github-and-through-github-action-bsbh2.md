@@ -41,7 +41,7 @@ isCJKLanguage: true
 
     点击右上角的 `Use this template`​​ 绿色按钮然后填写代码仓库的相关信息，参考如下：
 
-    ![使用模板创建](assets/net-img-68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67-20240219134347-1yf61br.png)[https://camo.githubusercontent.com/0031520ad9bb551333a37cf756fbfb3f538e6f33638cd3318e5d70f94aae28e8/68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67](https://camo.githubusercontent.com/0031520ad9bb551333a37cf756fbfb3f538e6f33638cd3318e5d70f94aae28e8/68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67)
+    ![使用模板创建](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040512856.png)[https://camo.githubusercontent.com/0031520ad9bb551333a37cf756fbfb3f538e6f33638cd3318e5d70f94aae28e8/68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67](https://camo.githubusercontent.com/0031520ad9bb551333a37cf756fbfb3f538e6f33638cd3318e5d70f94aae28e8/68747470733a2f2f696d67732e6c6973656e6875692e636e2f6875676f2d6e6578742f7573652d6875676f2d6e6578742d737461727465722e706e67)
 
     最后点击 `Create repository from template`​​ 绿色按钮，会直接在你的空间中生成站点代码，再使用`git clone`​​命令把它克隆到本地进行创作。
 
@@ -50,7 +50,7 @@ isCJKLanguage: true
 
   * 自定义首页，首先需要创建一个与你 Github ID 同名的仓库
 
-    ![image](assets/image-20240219134246-p234dqf.png)
+    ![image](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040509319.png)
 
     ​​
 
@@ -75,7 +75,7 @@ isCJKLanguage: true
   - 点击右上角的`Generate token`（生成令牌）按钮。
   ```
 
-  ![](assets/net-img-v2-d8374af8e1d58757770b79ebea8d6165_720w-20240219134347-di0w4pu.webp)
+  ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040502078.webp)
 
   2. **配置Personal Access Token的权限**：
 
@@ -83,7 +83,7 @@ isCJKLanguage: true
   当您生成`Personal Access Token`时，需要为其分配适当的权限。根据您的需求，可以为其分配不同的权限，例如访问仓库、读取用户资料等。请谨慎选择权限，最小化所需的权限以提高安全性。
   ```
 
-  ![](assets/net-img-v2-ffd1fae6f18feaf9a4dc8cd2677f8373_720w-20240219134347-dh1j1we.webp)
+  ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040505664.webp)
 
   3. **生成令牌**：
 
@@ -109,11 +109,11 @@ isCJKLanguage: true
   - 单击`Add secret`（添加密码）按钮。
   ```
 
-  ![](assets/net-img-v2-1c608b3468765b402d771d6b2766533d_720w-20240219134347-0tj3tzd.webp)
+  ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040459012.webp)
 
-  ![](assets/net-img-v2-a0e5a222dcb3eee33a2d9feb6958bdcc_720w-20240219134347-rxafbvf.webp)
+  ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040455233.webp)
 
-  ![](assets/net-img-v2-4a269aef8ba5a58672759e584a2a7f37_720w-20240219134347-qryzvzk.webp)
+  ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040451924.webp)
 
   现在，您的`Personal Access Token`​已经以安全的方式存储在`GitHub`​仓库的`Secrets`​中，并可以在`GitHub Action`​的工作流程中使用。
 
@@ -167,29 +167,29 @@ isCJKLanguage: true
     ```
   * 之后点右上角的commit（提交），会自动触发构建，构建详情如下图
 
-    ![](assets/net-img-202402191302174-20240219134421-tqdod40.png)​​​
+    ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040447478.png)​​​
   * 正常的话，github pages已经可以了
 
     点击设置，再点击右边栏上的 Pages
 
-    ![](assets/net-img-90d49c1edee7248ec11340d254384615-20240219134421-c6eav4e.png)
+    ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040435264.png)
 
     5. 设置 main 分支，root 根文件夹，并点击保存
 
-    ![](assets/net-img-e35c83245050bff365d075ea16373240-20240219134421-yohzmue.png)
+    ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040444066.png)
 
     6. 可以看到 Actions 中已经在构建和部署页面了
 
-    ![](assets/net-img-b0bf870906f11bb045517a7594fb9fea-20240219134421-yr69oif.png)
+    ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040439942.png)
 
     7. 构建完成后，重新回到 设置的Pages 页，可以看到多了如下的提示，点击查看即可
 
-    ![](assets/net-img-73c1d6dd1243661a32e6b171bd05e937-20240219134421-bc1un35.png)
+    ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040430610.png)
 * gitee导入github仓库并配置镜像仓库
 
   * 登录gitee导入github仓库
 
-    ![](assets/net-img-202402191312616-20240219134421-8k71xcy.png)
+    ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040242779.png)
   * 添加 Pull 方向的镜像
 
     Pull 方向的镜像用于将 `GitHub`​ 的仓库镜像到 `Gitee`​ 。
@@ -238,33 +238,33 @@ isCJKLanguage: true
 
   * **A.新建仓库 test_pages**
 
-    ![输入图片说明](assets/net-img-26173338_Pmcg-20240219134422-shk3ffc.png)
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040300506.png)
 
     点击创建完成仓库的创建
 
-    **B.添加文件** **​`index.html`​**​  **(注意名称是 index.html 哦！)**
+    **B.添加文件** **​`index.html`​**​                 **(注意名称是 index.html 哦！)**
 
     点击新建文件
 
-    ![输入图片说明](assets/net-img-26172523_5GI8-20240219134422-6dx839q.png)
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040306874.png)
 
     文件名输入`index.html`​，内容就是简单的`html`​
 
-    ![输入图片说明](assets/net-img-26173106_Jn2d-20240219134423-q70k0xn.png)
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040311563.png)
 
     点击提交，将文件提交到仓库
 
     **C.选择 pages 服务**
 
-    ![输入图片说明](assets/net-img-26173423_zzeF-20240219134423-ptu674m.png)
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040315676.png)
 
     **D.选择需要部署的分支，这里选择 Master 启动服务。**
 
-    ![输入图片说明](assets/net-img-26173508_e3TE-20240219134423-6g1nv74.png)
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040320822.png)
 
     **E.访问生成的网站地址，即可以查看你部署的静态页面啦！**
 
-    ![输入图片说明](assets/net-img-26173825_h9D1-20240219134423-3ev7gxk.png) ![输入图片说明](assets/net-img-26173847_USPU-20240219134423-0r3pfoj.png)
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040324744.png) ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040328671.png)
 
     ### 3. 已经有 Pages 仓库如何部署到 Gitee 的 Pages
 
@@ -274,46 +274,46 @@ isCJKLanguage: true
 
     如果想把它转移到 Gitee Pages，只需要登录你的 Gitee 账户，点击右上角的 `+`​ 号，选择新建仓库
 
-    ![输入图片说明](assets/net-img-26174500_j9HQ-20240219134423-xpjs2uk.png)
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040331473.png)
 
-    ![输入图片说明](assets/net-img-26174556_lc6V-20240219134423-cobl7ux.png)
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040335953.png)
 
-    ![输入图片说明](assets/net-img-26174630_Kpri-20240219134423-4kpmkb9.png)
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040341163.png)
 
     然后点击创建，仓库会在后台自动导入，导入成功后，点击菜单栏的服务下拉`Gitee Pages`​
 
-    ![输入图片说明](assets/net-img-26175015_PomW-20240219134423-nns3gvu.png)
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040345995.png)
 
-    ![输入图片说明](assets/net-img-26175207_KKZ0-20240219134423-lwqky50.png)
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040351146.png)
 
     这里我们默认的`Pages`​服务分支是仓库的默认分支，但是你也已选择自己静态页面所在的分支，这里`jQuery-File-Upload`​仓库的静态页面分支是`gh-pages`​，选择`gh-pages`​并点击启动服务。
 
-    ![输入图片说明](assets/net-img-26175333_xxzm-20240219134424-ee0yxiw.png) 至此，静态网页已经部署成功，访问提供的地址：[https://frech.gitee.io/jquery-file-upload/](https://frech.gitee.io/jquery-file-upload/) 即可查看到`jQuery-File-Upload`​仓库的静态官网。
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040355348.png) 至此，静态网页已经部署成功，访问提供的地址：[https://frech.gitee.io/jquery-file-upload/](https://frech.gitee.io/jquery-file-upload/) 即可查看到`jQuery-File-Upload`​仓库的静态官网。
 
-    ![输入图片说明](assets/net-img-26175421_ikZP-20240219134424-7z7efoe.png)
+    ![输入图片说明](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040359414.png)
 * 配置[hugo-theme-next](https://github.com/hugo-next/hugo-theme-next-starter)
 
   * 来到这个文件夹
 
-    ![](assets/net-img-202402191326427-20240219134424-czvthq8.png)
+    ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040407095.png)
   * 按照备注说明依次修改配置文件config.yaml、menus.yaml、params.yaml，修改后记得点击右上角绿色的commt，之后会自动构建
 
-    ![](assets/net-img-202402191326204-20240219134424-wtmsi8q.png)
+    ![](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040410450.png)
 
 　　使用详情：
 
 * 思源笔记一键发布插件配置
 
-  ![image](assets/image-20240219132807-j71e65k.png)
+  ![image](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040414070.png)
 
-  ![image](assets/image-20240219132847-sjv5p59.png)
+  ![image](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040417070.png)
 
-  ![image](assets/image-20240219133012-jo8yqb4.png)
+  ![image](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040420280.png)
 * 使用一键发布插件发布文章并选择hugo
 
-  ![image](assets/image-20240219133033-c400yl4.png)
+  ![image](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040423335.png)
 
-  ![image](assets/image-20240219133114-eo3gmsd.png)
+  ![image](https://raw.githubusercontent.com/szhiku/hugoNext/main/content/pic/20250320040427020.png)
 
 　　参考资料：
 
